@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>CounterApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- listener configuration -->
+  <listener>
+  <listener-class>mypack.CounterListener</listener-class>
+  </listener>
+  
+  <!-- EntryServlet -->
+  <servlet>
+  <servlet-name>s1</servlet-name>
+  <servlet-class>mypack.EntryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>s1</servlet-name>
+  <url-pattern>/entryServlet</url-pattern>
+  </servlet-mapping>
+  <!-- ExitServlet -->
+  <servlet>
+  <servlet-name>s2</servlet-name>
+  <servlet-class>mypack.ExitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>s2</servlet-name>
+  <url-pattern>/exitServlet</url-pattern>
+  </servlet-mapping>
+  <!-- AdminServlet -->
+  <servlet>
+  <servlet-name>s3</servlet-name>
+  <servlet-class>mypack.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>s3</servlet-name>
+  <url-pattern>/adminServlet</url-pattern>
+  </servlet-mapping>
+  <!-- Session Configuration -->
+  <session-config>
+  <session-timeout>2</session-timeout>
+  </session-config>
+  
+  
+</web-app>
